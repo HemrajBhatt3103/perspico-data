@@ -257,10 +257,12 @@ export default function Home() {
                 We help organizations harness data for smarter decisions and operational excellence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="#services">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
                   Explore Services
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
+                </Link>
                 <Link href="https://wa.me/447825247759?text=Hello%20Perspico%20Data%20team%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20data%20analytics%20services.">
                 <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg">
                   Book a Consultation
