@@ -803,6 +803,10 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-blue-600" />
+                  <span>+44 7825247759</span>
+                </div>
+                <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-blue-600" />
                   <span>alexis@perspicodata.com</span>
                 </div>
