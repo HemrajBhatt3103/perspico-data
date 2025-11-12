@@ -51,7 +51,6 @@ export default function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted');
-    console.log('Form data:', formData);
     const message = `Hello Perspico Data team, I’d like to learn more about your data analytics services. Name: ${formData.name}, Email: ${formData.email}, Company: ${formData.company}, Message: ${formData.message}`;
     const whatsappUrl = `https://wa.me/447825247759?text=${encodeURIComponent(message)}`;
     console.log('WhatsApp URL:', whatsappUrl);

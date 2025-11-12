@@ -347,15 +347,13 @@ export default function SustainabilityPage() {
               Let's discuss how our sustainability analytics can transform your environmental impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/#contact">
+              <Link href="https://wa.me/447825247759?text=Hello%20Perspico%20Data%20team%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20sustainability%20services.">
               <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4">
                 Schedule a Demo
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-emerald-600 px-8 py-4">
-                Download Case Study
-              </Button>
+              
             </div>
           </motion.div>
         </div>
