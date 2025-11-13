@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -30,7 +30,8 @@ import {
   Github,
   Linkedin,
   Twitter
-} from 'lucide-react'
+} from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -50,14 +51,14 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted');
-    const message = `Hello Perspico Data team, I’d like to learn more about your data analytics services. Name: ${formData.name}, Email: ${formData.email}, Company: ${formData.company}, Message: ${formData.message}`;
-    const whatsappUrl = `https://wa.me/447825247759?text=${encodeURIComponent(message)}`;
-    console.log('WhatsApp URL:', whatsappUrl);
-    window.open(whatsappUrl, '_blank');
+    const subject = `${formData.company} — Consultation Request for Data Solutions`;
+    const body = formData.message;
+    const mailtoUrl = `mailto:alexis@perspicodata.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const { scrollY } = useScroll()
   const headerOpacity = useTransform(scrollY, [0, 100], [1, 0.95])
   const headerBackground = useTransform(scrollY, [0, 100], ['rgba(255, 255, 255, 0.95)', 'rgba(255, 255, 255, 0.98)'])
@@ -162,14 +163,37 @@ export default function Home() {
             </div>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="/services/business-intelligence" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <button className="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                  Services
+                  <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isServicesOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    // The pt-2 on the parent div and removal of mt-2 here prevents a gap that closes the menu on hover
+                    className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg"
+                  >
+                    <ul className="py-2">
+                      {services.map((service) => (
+                        <li key={service.href}>
+                          <a href={service.href} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">{service.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </div>
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
               <a href="#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</a>
               <a href="#infrastructure" className="text-gray-700 hover:text-blue-600 transition-colors">Infrastructure</a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
-              <a href="https://wa.me/447825247759?text=Hello%20Perspico%20Data%20team%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20data%20analytics%20services." target="_blank" rel="noopener noreferrer">
-              <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>
-              </a>
+              <Button asChild className="bg-blue-600 hover:bg-blue-700"><a href="#contact">Book Consultation</a></Button>
             </nav>
 
             <button 
@@ -256,18 +280,18 @@ export default function Home() {
               <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl">
                 We help organizations harness data for smarter decisions and operational excellence.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#services">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
                   Explore Services
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 </Link>
-                <Link href="https://wa.me/447825247759?text=Hello%20Perspico%20Data%20team%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20data%20analytics%20services.">
+                <a href="#contact">
                 <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg">
                   Book a Consultation
                 </Button>
-                </Link>
+                </a>
               </div>
             </motion.div>
 
@@ -839,7 +863,7 @@ export default function Home() {
               <form onSubmit={handleSubmit}>
               <Card className="border-0 shadow-lg">
                 <CardHeader>
-                  <CardTitle>Schedule a Data Audit</CardTitle>
+                  <CardTitle>Contact Us</CardTitle>
                   <CardDescription>
                     Fill out the form below and we'll get back to you within 24 hours
                   </CardDescription>
@@ -879,6 +903,7 @@ export default function Home() {
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Acme Corporation"
+                      required
                     />
                   </div>
                   <div>
@@ -889,6 +914,7 @@ export default function Home() {
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
                       placeholder="Tell us about your data analytics needs..."
+                      required
                     />
                   </div>
                   <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">

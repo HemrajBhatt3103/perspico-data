@@ -1,12 +1,12 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { 
   ArrowLeft, 
-  BarChart3, 
   TrendingUp, 
   Truck,
   Package,
@@ -17,11 +17,43 @@ import {
   Users,
   Activity,
   Database,
-  Shield
+  Shield,
+  ChevronDown,
+  Globe,
+  Cpu,
+  BarChart3
 } from 'lucide-react'
 import Link from 'next/link'
 
 export default function SupplyChainPage() {
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesList = [
+    {
+      title: "Business Intelligence & Dashboards",
+      href: "/services/business-intelligence",
+    },
+    {
+      title: "Supply Chain & Operations Analytics",
+      href: "/services/supply-chain",
+    },
+    {
+      title: "Sustainability & Carbon Footprint Analytics",
+      href: "/services/sustainability",
+    },
+    {
+      title: "Product & Technology Analytics",
+      href: "/services/product-analytics",
+    },
+    {
+      title: "Data Automation",
+      href: "/services/data-automation",
+    },
+    {
+      title: "Integration",
+      href: "/services/integration",
+    }
+  ]
+
   const features = [
     {
       title: "Predictive Modeling",
@@ -81,7 +113,31 @@ export default function SupplyChainPage() {
             </Link>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</Link>
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <button className="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                  Services
+                  <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isServicesOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg"
+                  >
+                    <ul className="py-2">
+                      {servicesList.map((service) => (
+                        <li key={service.href}>
+                          <a href={service.href} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">{service.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </div>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</Link>
               <Link href="/#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
@@ -102,11 +158,11 @@ export default function SupplyChainPage() {
             transition={{ duration: 0.8 }}
           >
             <Link 
-              href="/#services"
+              href="/"
               className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Services
+              Back
             </Link>
             
             <div className="flex items-center space-x-4 mb-6">
@@ -348,7 +404,7 @@ export default function SupplyChainPage() {
               Let's discuss how our analytics solutions can transform your supply chain operations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="https://wa.me/447825247759?text=Hello%20Perspico%20Data%20team%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20supply%20chain%20services.">
+              <Link href="/#contact">
               <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4">
                 Schedule a Demo
                 <ArrowRight className="ml-2 w-5 h-5" />
