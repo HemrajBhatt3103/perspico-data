@@ -110,7 +110,7 @@ export default function DataAutomationPage() {
                     className="w-full h-full object-contain"
                   />
               </div>
-              <span className="font-bold text-xl">Perspico Data</span>
+              <span className="font-heading text-xl">Perspico Data</span>
             </Link>
             
             <nav className="hidden md:flex items-center space-x-8">
@@ -172,7 +172,7 @@ export default function DataAutomationPage() {
               </div>
               <div>
                 <Badge className="mb-2 bg-orange-100 text-orange-800 border-orange-200">Core Service</Badge>
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="font-heading text-4xl md:text-6xl text-gray-900 leading-tight">
                   Data Automation
                 </h1>
               </div>
@@ -196,7 +196,7 @@ export default function DataAutomationPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
                 Intelligent Data Automation
               </h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -261,7 +261,7 @@ export default function DataAutomationPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
               Automation Capabilities
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -283,7 +283,7 @@ export default function DataAutomationPage() {
                     <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                       <feature.icon className="w-6 h-6 text-orange-600" />
                     </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                    <CardTitle className="font-heading text-xl">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600">{feature.description}</p>
@@ -305,7 +305,7 @@ export default function DataAutomationPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-8">
                 Operational Benefits
               </h2>
               <div className="space-y-4">
@@ -328,7 +328,7 @@ export default function DataAutomationPage() {
             >
               <Card className="border-0 shadow-xl">
                 <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
+                  <CardTitle className="font-heading flex items-center space-x-2">
                     <Users className="w-6 h-6 text-orange-600" />
                     <span>Client Success Story</span>
                   </CardTitle>
@@ -342,7 +342,7 @@ export default function DataAutomationPage() {
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
                     <div>
-                      <div className="font-semibold">Data Engineering Manager</div>
+                      <div className="font-heading">Data Engineering Manager</div>
                       <div className="text-sm text-gray-600">Financial Services Company</div>
                     </div>
                   </div>
@@ -363,7 +363,7 @@ export default function DataAutomationPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
               Automation Technology Stack
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -381,7 +381,7 @@ export default function DataAutomationPage() {
                 viewport={{ once: true }}
                 className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow text-center"
               >
-                <div className="text-lg font-semibold text-gray-900">{tech.name}</div>
+                <div className="font-heading text-lg text-gray-900">{tech.name}</div>
                 <div className="text-sm text-gray-600 mt-1">{tech.category}</div>
               </motion.div>
             ))}
@@ -398,7 +398,7 @@ export default function DataAutomationPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl text-white mb-6">
               Ready to Automate Your Data Operations?
             </h2>
             <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">

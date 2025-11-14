@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import localFont from 'next/font/local'
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
+const inter = localFont({
+  src: [
+    {
+      path: '../fonts/Inter-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400"],
-});
+const satoshi = localFont({
+  src: '../fonts/Satoshi-Medium.otf',
+  variable: '--font-satoshi',
+  display: 'swap',
+})
+export const viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title: "Perspico Data - Data Analytics",
@@ -43,10 +52,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${spaceGrotesk.variable} ${inter.variable} antialiased bg-background text-foreground`}
-      >
+    <html lang="en" className={`${inter.variable} ${satoshi.variable}`}>
+      <body className="font-body">
         {children}
         <Toaster />
       </body>

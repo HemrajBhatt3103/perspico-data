@@ -159,7 +159,7 @@ export default function Home() {
                     className="w-full h-full object-contain"
                   />
               </div>
-              <span className="font-bold text-xl">Perspico Data</span>
+              <span className="font-heading text-xl">Perspico Data</span>
             </div>
             
             <nav className="hidden md:flex items-center space-x-8">
@@ -268,10 +268,10 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Badge className="mb-6 bg-blue-100 text-blue-800 border-blue-200">
+              <Badge className="mt-10 mb-6 bg-blue-100 text-blue-800 border-blue-200">
                 Enterprise Data Analytics Solutions
               </Badge>
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="font-heading text-5xl md:text-7xl text-gray-900 mb-6 leading-tight">
                 Transforming Data into
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
                   {" "}Strategic Advantage
@@ -324,7 +324,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
               About Our Expertise
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -356,7 +356,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              <h3 className="font-heading text-3xl text-gray-900 mb-6">
                 Decades of Collective Excellence
               </h3>
               <p className="text-lg text-gray-600 mb-6">
@@ -372,15 +372,15 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700">500+ Projects Delivered</span>
+                  <span className="text-gray-700">15+ Projects Delivered</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700">15+ Industries Served</span>
+                  <span className="text-gray-700">5+ Industries Served</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700">50+ Expert Consultants</span>
+                  <span className="text-gray-700">10+ Expert Consultants</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-blue-600" />
@@ -420,7 +420,7 @@ export default function Home() {
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                       <item.icon className="w-6 h-6 text-blue-600" />
                     </div>
-                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                    <CardTitle className="font-heading text-xl">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600">{item.description}</p>
@@ -442,7 +442,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
               Data Analytics Consultancy
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -457,7 +457,7 @@ export default function Home() {
 
           {/* Service Architecture Visualization */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-2xl font-bold text-center mb-8">Service Architecture</h3>
+            <h3 className="font-heading text-2xl text-center mb-8">Service Architecture</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {services.map((service, index) => (
                 <motion.div
@@ -471,7 +471,7 @@ export default function Home() {
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-3">
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="font-semibold text-sm mb-1">{service.title}</h4>
+                  <h4 className="font-heading text-sm mb-1">{service.title}</h4>
                 </motion.div>
               ))}
             </div>
@@ -489,7 +489,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
               Data Analytics Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -511,7 +511,7 @@ export default function Home() {
                     <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
                       <service.icon className={`w-8 h-8 ${service.color} group-hover:text-blue-600 transition-colors`} />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="font-heading text-xl">{service.title}</CardTitle>
                     <CardDescription className="text-gray-600">
                       {service.description}
                     </CardDescription>
@@ -541,7 +541,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
               Case Studies & Results
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -563,8 +563,8 @@ export default function Home() {
                     <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
                       <study.icon className="w-8 h-8 text-white" />
                     </div>
-                    <div className="text-4xl font-bold text-blue-600 mb-2">{study.value}</div>
-                    <CardTitle className="text-xl">{study.title}</CardTitle>
+                    <div className="font-heading text-4xl text-blue-600 mb-2">{study.value}</div>
+                    <CardTitle className="font-heading text-xl">{study.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
                     <p className="text-gray-600">{study.description}</p>
@@ -586,7 +586,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
               Deployment & Infrastructure
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -617,7 +617,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              <h3 className="font-heading text-3xl text-gray-900 mb-6">
                 Modern Cloud Architecture
               </h3>
               <p className="text-lg text-gray-600 mb-6">
@@ -666,7 +666,7 @@ export default function Home() {
                       <item.icon className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm">{item.name}</h4>
+                      <h4 className="font-heading text-sm">{item.name}</h4>
                       <p className="text-xs text-gray-600">{item.description}</p>
                     </div>
                   </div>
@@ -701,7 +701,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
               UK Security & Compliance
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -732,7 +732,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              <h3 className="font-heading text-3xl text-gray-900 mb-6">
                 UK Data Protection Excellence
               </h3>
               <p className="text-lg text-gray-600 mb-6">
@@ -741,7 +741,7 @@ export default function Home() {
                 security standards.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From GDPR to UK-specific data protection laws, our comprehensive security 
+                From GDPR to UK specific data protection laws, our comprehensive security 
                 protocols ensure your data remains protected, private, and compliant with all 
                 relevant legislation.
               </p>
@@ -784,7 +784,7 @@ export default function Home() {
                 <div className="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4">
                   <item.icon className={`w-10 h-10 ${item.color}`} />
                 </div>
-                <h3 className="font-semibold">{item.name}</h3>
+                <h3 className="font-heading">{item.name}</h3>
               </motion.div>
             ))}
           </div>
@@ -801,7 +801,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
               Contact & Consultation
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -825,7 +825,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+              <h3 className="font-heading text-2xl text-gray-900 mb-6">Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-blue-600" />
@@ -863,7 +863,7 @@ export default function Home() {
               <form onSubmit={handleSubmit}>
               <Card className="border-0 shadow-lg">
                 <CardHeader>
-                  <CardTitle>Contact Us</CardTitle>
+                  <CardTitle className="font-heading">Contact Us</CardTitle>
                   <CardDescription>
                     Fill out the form below and we'll get back to you within 24 hours
                   </CardDescription>
@@ -941,7 +941,7 @@ export default function Home() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="font-bold text-xl">Perspico Data</span>
+                <span className="font-heading text-xl">Perspico Data</span>
               </div>
               <p className="text-gray-400">
                 Transforming data into strategic advantage for enterprise organizations.
@@ -949,7 +949,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
+              <h4 className="font-heading mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="/services/business-intelligence" className="hover:text-white transition-colors">Business Intelligence</a></li>
                 <li><a href="/services/supply-chain" className="hover:text-white transition-colors">Supply Chain Analytics</a></li>
@@ -959,7 +959,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-heading mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="#case-studies" className="hover:text-white transition-colors">Case Studies</a></li>
@@ -969,7 +969,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">UK Office</h4>
+              <h4 className="font-heading mb-4">UK Office</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>St Albans, London</li>
               </ul>
