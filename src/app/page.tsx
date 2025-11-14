@@ -268,7 +268,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Badge className="mt-10 mb-6 bg-blue-100 text-blue-800 border-blue-200">
+              <Badge className="mt-20 md:mt-10 mb-6 bg-blue-100 text-blue-800 border-blue-200">
                 Enterprise Data Analytics Solutions
               </Badge>
               <h1 className="font-heading text-5xl md:text-7xl text-gray-900 mb-6 leading-tight">
