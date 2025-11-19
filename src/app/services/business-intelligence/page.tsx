@@ -1,28 +1,31 @@
 'use client'
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { 
-  ArrowLeft, 
   BarChart3, 
   PieChart,
   LineChart,
-  Activity,
   CheckCircle,
   ArrowRight,
   Users,
   Target,
-  Database,
-  Shield,
   ChevronDown,
   Zap,
   TrendingUp,
   Globe,
-  Cpu
+  Cpu,
+  Menu,
+  X,
+  Mail,
+  Phone,
+  MapPin,
+  ArrowLeft
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -54,6 +57,25 @@ export default function BusinessIntelligencePage() {
       href: "/services/integration",
     }
   ]
+
+  const pageFaqs = [
+    {
+      question: "What BI tools do you specialize in?",
+      answer: "We are tool-agnostic but have deep expertise in market-leading platforms like Power BI, Tableau, and Looker. Our primary focus is on selecting the right tool that fits your existing infrastructure, budget, and business objectives."
+    },
+    {
+      question: "How long does it take to develop a set of dashboards?",
+      answer: "The timeline varies based on complexity and data readiness. A simple departmental dashboard might take 1-2 weeks, while a comprehensive, enterprise-wide BI solution could take 2-3 months. We provide a detailed project plan after our initial discovery phase."
+    },
+    {
+      question: "Can you connect to our company's custom data sources?",
+      answer: "Yes. A core part of our service is data integration. We can connect to a wide array of sources, including standard databases (SQL, Oracle), cloud warehouses (Snowflake, BigQuery), SaaS APIs, and even proprietary or legacy systems."
+    },
+    {
+      question: "Do you provide training for our team to use the new tools?",
+      answer: "Absolutely. We believe user adoption is key to a project's success. We provide comprehensive training sessions tailored to different user groups, from executives to analysts, ensuring your team can confidently use the new dashboards to drive decisions."
+    }
+  ];
 
   const features = [
     {
@@ -96,10 +118,13 @@ export default function BusinessIntelligencePage() {
     { name: "Grafana", category: "Monitoring" }
   ]
 
+  const { scrollY } = useScroll();
+  const headerBackground = useTransform(scrollY, [0, 100], ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.95)']);
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200">
+      <motion.header style={{ backgroundColor: headerBackground }} className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-gray-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
@@ -139,31 +164,38 @@ export default function BusinessIntelligencePage() {
                   </motion.div>
                 )}
               </div>
-              <Link href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</Link>
-              <Link href="/#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</Link>
-              <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
-              <Link href="/#contact">
-              <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>
-              </Link>
+              <a href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+              <a href="/#infrastructure" className="text-gray-700 hover:text-blue-600 transition-colors">Infrastructure</a>
+              <a href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+              <Button asChild className="bg-blue-600 hover:bg-blue-700"><a href="/#contact">Book Consultation</a></Button>
             </nav>
+            <button className="md:hidden" onClick={() => {}}>
+              <Menu className="w-6 h-6" />
+            </button>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-50 to-cyan-50 overflow-hidden">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-200/50 rounded-full filter blur-3xl opacity-50"></div>
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-cyan-200/50 rounded-full filter blur-3xl opacity-50"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
             <Link 
               href="/"
               className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+              <div className="w-8 h-8 bg-white/50 rounded-full flex items-center justify-center mr-2 border border-gray-200/50">
+                <ArrowLeft className="w-5 h-5 " />
+              </div>
+              Back to Home
             </Link>
             
             <div className="flex items-center space-x-4 mb-6">
@@ -387,6 +419,43 @@ export default function BusinessIntelligencePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
+              Your Questions, Answered
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Key information about our Business Intelligence services.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="w-full">
+              {pageFaqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-gray-50 border-0 border-b shadow-sm rounded-lg mb-4 px-6">
+                  <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -417,8 +486,44 @@ export default function BusinessIntelligencePage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+                </div>
+                <span className="font-heading text-xl">Perspico Data</span>
+              </div>
+              <p className="text-gray-400">Transforming data into strategic advantage.</p>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                {servicesList.map(service => (
+                  <li key={service.href}><a href={service.href} className="hover:text-white transition-colors">{service.title.split('&')[0]}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
+                <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+                <li><a href="/#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">UK Office</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><MapPin className="inline w-4 h-4 mr-2" />London, UK</li>
+                <li><a href="mailto:info@perspicodata.com" className="hover:text-white transition-colors"><Mail className="inline w-4 h-4 mr-2" />info@perspicodata.com</a></li>
+                <li><a href="tel:+447825247759" className="hover:text-white transition-colors"><Phone className="inline w-4 h-4 mr-2" />+44 7825247759</a></li>
+              </ul>
+            </div>
+          </div>
+          <Separator className="my-8 bg-gray-800" />
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 Perspico Data. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Perspico Data. All rights reserved.</p>
           </div>
         </div>
       </footer>

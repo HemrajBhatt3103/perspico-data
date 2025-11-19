@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { 
@@ -53,7 +54,7 @@ export default function Home() {
     e.preventDefault();
     const subject = `${formData.company} — Consultation Request for Data Solutions`;
     const body = formData.message;
-    const mailtoUrl = `mailto:alexis@perspicodata.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoUrl = `mailto:info@perspicodata.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoUrl;
   };
 
@@ -134,12 +135,35 @@ export default function Home() {
     { name: "React Frontend", icon: Cpu, description: "Modern, responsive UI" },
     { name: "FastAPI Backend", icon: Zap, description: "High-performance API layer" },
     { name: "PostgreSQL Database", icon: Database, description: "Secure, scalable data storage" },
-    { name: "AWS Infrastructure", icon: Cloud, description: "Enterprise cloud platform" },
+    { name: "Cloud Computing Infrastructure", icon: Cloud, description: "Enterprise cloud platform" },
     { name: "VPC Networking", icon: Shield, description: "Isolated, secure environment" },
     { name: "RDS Database", icon: Database, description: "Managed database service" },
     { name: "ECS/EKS Containers", icon: Cpu, description: "Scalable container orchestration" },
     { name: "CloudFront CDN", icon: Globe, description: "Global content delivery" },
     { name: "S3 Storage", icon: Database, description: "Object storage solution" }
+  ]
+
+  const faqs = [
+    {
+      question: "What kind of results can we expect?",
+      answer: "Our clients typically see significant improvements in operational efficiency, cost reduction, and revenue growth. For example, we've helped businesses reduce reporting cycle times by over 60% and increase forecast accuracy by 35% through advanced analytics and automation."
+    },
+    {
+      question: "How do you ensure data security and compliance?",
+      answer: "Security is paramount. We build on enterprise-grade cloud infrastructure and adhere to strict UK data protection standards, including UK GDPR and ISO 27001. Your data is always encrypted, isolated, and managed with robust access controls."
+    },
+    {
+      question: "What is the process for starting a project?",
+      answer: "It starts with a complimentary consultation to understand your challenges and goals. From there, we'll outline a strategic roadmap, define key deliverables, and assemble a dedicated team to execute the project, ensuring transparency and collaboration at every stage."
+    },
+    {
+      question: "Which industries do you specialize in?",
+      answer: "While our analytics expertise is applicable across many sectors, we have deep experience in supply chain & logistics, finance, technology, and sustainability. We tailor our solutions to the unique challenges and data landscapes of your industry."
+    },
+    {
+      question: "Can you integrate with our existing systems?",
+      answer: "Absolutely. Our integration services are designed to connect disparate systems, from legacy databases to modern SaaS platforms. We create a unified data ecosystem, ensuring seamless data flow and a single source of truth for your analytics."
+    }
   ]
 
   return (
@@ -190,7 +214,9 @@ export default function Home() {
                 )}
               </div>
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-              <a href="#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</a>
+              <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+
+              {/* <a href="/services/case-studies" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 transition-colors">Case Studies</a> */}
               <a href="#infrastructure" className="text-gray-700 hover:text-blue-600 transition-colors">Infrastructure</a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
               <Button asChild className="bg-blue-600 hover:bg-blue-700"><a href="#contact">Book Consultation</a></Button>
@@ -215,7 +241,7 @@ export default function Home() {
             <div className="px-4 py-2 space-y-1">
               <a href="#services" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
               <a href="#about" className="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
-              <a href="#case-studies" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Results</a>
+              <Link href="/case-studies" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Results</Link>
               <a href="#infrastructure" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Infrastructure</a>
               <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
             </div>
@@ -224,7 +250,7 @@ export default function Home() {
       </motion.header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -235,25 +261,25 @@ export default function Home() {
               </linearGradient>
             </defs>
             <motion.path
-              d="M0,100 Q250,50 500,100 T1000,100 L1000,400 L0,400 Z"
+              d="M-200,100 Q350,50 900,100 T2000,100 L2000,400 L-200,400 Z"
               fill="url(#gradient1)"
               animate={{
                 d: [
-                  "M0,100 Q250,50 500,100 T1000,100 L1000,400 L0,400 Z",
-                  "M0,150 Q250,100 500,150 T1000,150 L1000,400 L0,400 Z",
-                  "M0,100 Q250,50 500,100 T1000,100 L1000,400 L0,400 Z"
+                  "M-200,100 Q350,50 900,100 T2000,100 L2000,400 L-200,400 Z",
+                  "M-200,150 Q350,100 900,150 T2000,150 L2000,400 L-200,400 Z",
+                  "M-200,100 Q350,50 900,100 T2000,100 L2000,400 L-200,400 Z"
                 ]
               }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.path
-              d="M0,200 Q300,150 600,200 T1200,200 L1200,500 L0,500 Z"
+              d="M-200,200 Q400,150 1000,200 T2200,200 L2200,500 L-200,500 Z"
               fill="url(#gradient1)"
               animate={{
                 d: [
-                  "M0,200 Q300,150 600,200 T1200,200 L1200,500 L0,500 Z",
-                  "M0,250 Q300,200 600,250 T1200,250 L1200,500 L0,500 Z",
-                  "M0,200 Q300,150 600,200 T1200,200 L1200,500 L0,500 Z"
+                  "M-200,200 Q400,150 1000,200 T2200,200 L2200,500 L-200,500 Z",
+                  "M-200,250 Q400,200 1000,250 T2200,250 L2200,500 L-200,500 Z",
+                  "M-200,200 Q400,150 1000,200 T2200,200 L2200,500 L-200,500 Z"
                 ]
               }}
               transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -432,53 +458,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core Offering Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
-              Data Analytics Consultancy
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              We assess data maturity, define measurable goals, and build scalable analytics systems 
-              tailored to each client's business model.
-            </p>
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Learn More
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </motion.div>
-
-          {/* Service Architecture Visualization */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="font-heading text-2xl text-center mb-8">Service Architecture</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <service.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="font-heading text-sm mb-1">{service.title}</h4>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section id="services" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -622,7 +601,7 @@ export default function Home() {
               </h3>
               <p className="text-lg text-gray-600 mb-6">
                 Our infrastructure leverages cutting-edge cloud technologies to deliver 
-                scalable, secure, and high-performance analytics solutions. Built on AWS 
+                scalable, secure, and high-performance analytics solutions. Built on cloud computing infrastructure
                 with automated CI/CD pipelines and comprehensive monitoring.
               </p>
               <p className="text-lg text-gray-600 mb-8">
@@ -681,7 +660,7 @@ export default function Home() {
               </Badge>
               <Badge className="bg-blue-100 text-blue-800 border-blue-200 ml-2">
                 <Shield className="w-4 h-4 mr-1" />
-                AWS IAM Secured
+                Cloud IAM Secured
               </Badge>
               <Badge className="bg-purple-100 text-purple-800 border-purple-200 ml-2">
                 <Cloud className="w-4 h-4 mr-1" />
@@ -756,7 +735,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700">Cyber Essentials Plus</span>
+                  <span className="text-gray-700">SOC</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-blue-600" />
@@ -770,7 +749,7 @@ export default function Home() {
             {[
               { name: "UK GDPR Compliant", icon: Shield, color: "text-blue-600" },
               { name: "UK Data Protection Act", icon: Lock, color: "text-red-600" },
-              { name: "Cyber Essentials Plus", icon: Cloud, color: "text-purple-600" },
+              { name: "SOC2 Certification", icon: Shield, color: "text-purple-600" },
               { name: "ISO 27001 Certified", icon: CheckCircle, color: "text-green-600" }
             ].map((item, index) => (
               <motion.div
@@ -788,6 +767,47 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Have questions? We have answers. Here are some common queries about our services and process.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-white border-0 border-b shadow-sm rounded-lg mb-4 px-6">
+                  <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
         </div>
       </section>
 
@@ -833,11 +853,11 @@ export default function Home() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-blue-600" />
-                  <span>alexis@perspicodata.com</span>
+                  <span>info@perspicodata.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-blue-600" />
-                  <span>St Albans, London</span>
+                  <span>London, UK</span>
                 </div>
               </div>
 
@@ -954,7 +974,11 @@ export default function Home() {
                 <li><a href="/services/business-intelligence" className="hover:text-white transition-colors">Business Intelligence</a></li>
                 <li><a href="/services/supply-chain" className="hover:text-white transition-colors">Supply Chain Analytics</a></li>
                 <li><a href="/services/sustainability" className="hover:text-white transition-colors">Sustainability Analytics</a></li>
+                <li><a href="/services/product-analytics" className="hover:text-white transition-colors">Product Analytics</a></li>
                 <li><a href="/services/data-automation" className="hover:text-white transition-colors">Data Automation</a></li>
+                <li><a href="/services/integration" className="hover:text-white transition-colors">Integration</a></li>
+
+                
               </ul>
             </div>
 
@@ -962,7 +986,7 @@ export default function Home() {
               <h4 className="font-heading mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#case-studies" className="hover:text-white transition-colors">Case Studies</a></li>
+                <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
                 <li><a href="#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
                 <li><a href="#security" className="hover:text-white transition-colors">Security</a></li>
               </ul>
@@ -971,7 +995,7 @@ export default function Home() {
             <div>
               <h4 className="font-heading mb-4">UK Office</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>St Albans, London</li>
+                <li>London, UK</li>
               </ul>
             </div>
           </div>

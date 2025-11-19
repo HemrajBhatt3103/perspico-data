@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { 
   ArrowLeft, 
@@ -21,9 +22,13 @@ import {
   TrendingUp,
   Globe,
   Zap,
-  BarChart3
+  BarChart3,
+  MapPin,
+  Mail,
+  Phone
 } from 'lucide-react'
 import Link from 'next/link'
+import { Separator } from '@radix-ui/react-separator'
 
 export default function ProductAnalyticsPage() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -53,6 +58,25 @@ export default function ProductAnalyticsPage() {
       href: "/services/integration",
     }
   ]
+
+  const pageFaqs = [
+    {
+      question: "What metrics are crucial for product performance analysis?",
+      answer: "Key metrics include user adoption rates, feature usage, retention, and conversion funnels. Our product performance analysis helps you identify and track the specific metrics that align with your goals, providing a clear view of what's working and what isn't."
+    },
+    {
+      question: "How do you conduct user journey analysis across platforms?",
+      answer: "We implement cross-platform tracking to stitch together user sessions, creating a unified view of the customer journey. This detailed journey analysis is crucial for understanding user behavior and identifying friction points, regardless of the device."
+    },
+    {
+      question: "Can you help us with A/B test analysis?",
+      answer: "Yes. We provide end-to-end support for experimentation, from hypothesis generation and experiment design to the statistical analysis of the results. This ensures you can make data-driven decisions about new features with confidence."
+    },
+    {
+      question: "How does product analysis lead to a better ROI?",
+      answer: "By understanding how users interact with your product through detailed analysis, you can prioritize high-impact features, improve user retention, and optimize conversion funnels. This leads to a more engaging product, higher customer satisfaction, and ultimately, increased revenue."
+    }
+  ];
 
   const features = [
     {
@@ -89,7 +113,7 @@ export default function ProductAnalyticsPage() {
   const technologies = [
     { name: "Mixpanel", category: "Product Analytics" },
     { name: "Amplitude", category: "User Analytics" },
-    { name: "Google Analytics", category: "Web Analytics" },
+    { name: "Cloud Analytics", category: "Web Analytics" },
     { name: "Segment", category: "Data Collection" },
     { name: "Tableau", category: "Visualization" },
     { name: "Python", category: "Analytics" }
@@ -139,6 +163,8 @@ export default function ProductAnalyticsPage() {
                 )}
               </div>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</Link>
+              <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+
               <Link href="/#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/#contact">
@@ -162,7 +188,7 @@ export default function ProductAnalyticsPage() {
               className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+              Back to Home
             </Link>
             
             <div className="flex items-center space-x-4 mb-6">
@@ -387,6 +413,43 @@ export default function ProductAnalyticsPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
+              Your Questions, Answered
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Key information about our Product & Technology Analysis services.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="w-full">
+              {pageFaqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-gray-50 border-0 border-b shadow-sm rounded-lg mb-4 px-6">
+                  <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -418,8 +481,44 @@ export default function ProductAnalyticsPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+                </div>
+                <span className="font-heading text-xl">Perspico Data</span>
+              </div>
+              <p className="text-gray-400">Transforming data into strategic advantage.</p>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                {servicesList.map(service => (
+                  <li key={service.href}><a href={service.href} className="hover:text-white transition-colors">{service.title.split('&')[0]}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
+                <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+                <li><a href="/#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">UK Office</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><MapPin className="inline w-4 h-4 mr-2" />London, UK</li>
+                <li><a href="mailto:info@perspicodata.com" className="hover:text-white transition-colors"><Mail className="inline w-4 h-4 mr-2" />info@perspicodata.com</a></li>
+                <li><a href="tel:+447825247759" className="hover:text-white transition-colors"><Phone className="inline w-4 h-4 mr-2" />+44 7825247759</a></li>
+              </ul>
+            </div>
+          </div>
+          <Separator className="my-8 bg-gray-800" />
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 Perspico Data. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Perspico Data. All rights reserved.</p>
           </div>
         </div>
       </footer>

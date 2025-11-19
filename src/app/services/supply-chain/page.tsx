@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { 
   ArrowLeft, 
@@ -21,9 +22,13 @@ import {
   ChevronDown,
   Globe,
   Cpu,
-  BarChart3
+  BarChart3,
+  Phone,
+  Mail,
+  MapPin
 } from 'lucide-react'
 import Link from 'next/link'
+import { Separator } from '@/components/ui/separator'
 
 export default function SupplyChainPage() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -33,15 +38,15 @@ export default function SupplyChainPage() {
       href: "/services/business-intelligence",
     },
     {
-      title: "Supply Chain & Operations Analytics",
+      title: "Supply Chain & Operations Analytysis",
       href: "/services/supply-chain",
     },
     {
-      title: "Sustainability & Carbon Footprint Analytics",
+      title: "Sustainability & Carbon Footprint Analysis",
       href: "/services/sustainability",
     },
     {
-      title: "Product & Technology Analytics",
+      title: "Product & Technology Analysis",
       href: "/services/product-analytics",
     },
     {
@@ -53,6 +58,25 @@ export default function SupplyChainPage() {
       href: "/services/integration",
     }
   ]
+
+  const pageFaqs = [
+    {
+      question: "What kind of supply chain data can you analyze?",
+      answer: "We analyze a wide spectrum of data, including inventory levels, logistics and shipping data, supplier performance metrics, demand forecasts, production schedules, and procurement costs. Our goal is to create a holistic view of your entire supply chain."
+    },
+    {
+      question: "How do you help with demand forecasting?",
+      answer: "We use advanced statistical models and machine learning algorithms to analyze historical sales data, market trends, and seasonality. This results in more accurate demand forecasts, helping you optimize inventory and reduce stockouts or overstock situations."
+    },
+    {
+      question: "Can your solutions integrate with our existing ERP or SCM software?",
+      answer: "Yes, integration is a key part of our service. We have extensive experience connecting our analysis platforms with major ERP and Supply Chain Management systems like SAP, Oracle, and others to ensure seamless data flow."
+    },
+    {
+      question: "What is the typical ROI for a supply chain analysis project?",
+      answer: "While ROI varies, our clients often see significant returns through cost savings in inventory and logistics, improved operational efficiency, and better supplier negotiations. We work with you to define and track the metrics that demonstrate value."
+    }
+  ];
 
   const features = [
     {
@@ -71,7 +95,7 @@ export default function SupplyChainPage() {
       icon: Zap
     },
     {
-      title: "Risk Analytics",
+      title: "Risk Analysis",
       description: "Identify and mitigate potential disruptions before they impact operations",
       icon: Shield
     }
@@ -87,12 +111,12 @@ export default function SupplyChainPage() {
   ]
 
   const technologies = [
-    { name: "Python", category: "Analytics" },
+    { name: "Python", category: "Analysis" },
     { name: "R", category: "Statistical Modeling" },
     { name: "TensorFlow", category: "Machine Learning" },
     { name: "Tableau", category: "Visualization" },
     { name: "Apache Kafka", category: "Real-time Processing" },
-    { name: "PostgreSQL", category: "Database" }
+    { name: "SQL & NoSQL", category: "Database" }
   ]
 
   return (
@@ -139,6 +163,8 @@ export default function SupplyChainPage() {
                 )}
               </div>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</Link>
+              <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+
               <Link href="/#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/#contact">
@@ -162,7 +188,7 @@ export default function SupplyChainPage() {
               className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+              Back to Home
             </Link>
             
             <div className="flex items-center space-x-4 mb-6">
@@ -172,14 +198,14 @@ export default function SupplyChainPage() {
               <div>
                 <Badge className="mb-2 bg-green-100 text-green-800 border-green-200">Core Service</Badge>
                 <h1 className="font-heading text-4xl md:text-6xl text-gray-900 leading-tight">
-                  Supply Chain & Operations Analytics
+                  Supply Chain & Operations Analysis
                 </h1>
               </div>
             </div>
             
             <p className="text-xl text-gray-600 max-w-3xl">
               Optimize your supply chain with predictive modeling, real-time insights, 
-              and advanced analytics for enhanced operational efficiency.
+              and advanced Analysis for enhanced operational efficiency.
             </p>
           </motion.div>
         </div>
@@ -199,13 +225,13 @@ export default function SupplyChainPage() {
                 Intelligent Supply Chain Optimization
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our Supply Chain Analytics solutions leverage advanced machine learning algorithms 
+                Our Supply Chain Analysis solutions leverage advanced machine learning algorithms 
                 and predictive modeling to transform your operations. We provide end-to-end visibility 
                 from raw materials to final delivery, enabling data-driven decisions that reduce costs 
                 and improve efficiency.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From demand forecasting to route optimization, our analytics platform helps you 
+                From demand forecasting to route optimization, our analysis platform helps you 
                 anticipate challenges, identify opportunities, and maintain competitive advantage 
                 in today's complex supply chain landscape.
               </p>
@@ -225,7 +251,7 @@ export default function SupplyChainPage() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600" />
-                  <span className="text-gray-700">Supplier Analytics</span>
+                  <span className="text-gray-700">Supplier Analysis</span>
                 </div>
               </div>
             </motion.div>
@@ -261,7 +287,7 @@ export default function SupplyChainPage() {
             className="text-center mb-16"
           >
             <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
-              Advanced Analytics Capabilities
+              Advanced Analysis Capabilities
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive supply chain intelligence for modern enterprises
@@ -334,7 +360,7 @@ export default function SupplyChainPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    "The supply chain analytics platform transformed our operations. We reduced 
+                    "The supply chain analysis platform transformed our operations. We reduced 
                     inventory costs by 28% while improving delivery times by 40%. The predictive 
                     insights have been game-changing for our business."
                   </p>
@@ -366,7 +392,7 @@ export default function SupplyChainPage() {
               Technology Stack
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Advanced analytics tools for supply chain optimization
+              Advanced analysis tools for supply chain optimization
             </p>
           </motion.div>
 
@@ -388,6 +414,43 @@ export default function SupplyChainPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
+              Your Questions, Answered
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Insights into our Supply Chain & Operations Analysis services.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="w-full">
+              {pageFaqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-gray-50 border-0 border-b shadow-sm rounded-lg mb-4 px-6">
+                  <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -401,7 +464,7 @@ export default function SupplyChainPage() {
               Ready to Optimize Your Supply Chain?
             </h2>
             <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our analytics solutions can transform your supply chain operations.
+              Let's discuss how our analysis solutions can transform your supply chain operations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/#contact">
@@ -419,8 +482,44 @@ export default function SupplyChainPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+                </div>
+                <span className="font-heading text-xl">Perspico Data</span>
+              </div>
+              <p className="text-gray-400">Transforming data into strategic advantage.</p>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                {servicesList.map(service => (
+                  <li key={service.href}><a href={service.href} className="hover:text-white transition-colors">{service.title.split('&')[0]}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
+                <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+                <li><a href="/#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">UK Office</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><MapPin className="inline w-4 h-4 mr-2" />London, UK</li>
+                <li><a href="mailto:info@perspicodata.com" className="hover:text-white transition-colors"><Mail className="inline w-4 h-4 mr-2" />info@perspicodata.com</a></li>
+                <li><a href="tel:+447825247759" className="hover:text-white transition-colors"><Phone className="inline w-4 h-4 mr-2" />+44 7825247759</a></li>
+              </ul>
+            </div>
+          </div>
+          <Separator className="my-8 bg-gray-800" />
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 Perspico Data. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Perspico Data. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { 
   ArrowLeft, 
@@ -22,9 +23,13 @@ import {
   TrendingUp,
   Globe,
   Cpu,
-  BarChart3
+  BarChart3,
+  MapPin,
+  Mail,
+  Phone
 } from 'lucide-react'
 import Link from 'next/link'
+import { Separator } from '@radix-ui/react-separator'
 
 export default function DataAutomationPage() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -54,6 +59,25 @@ export default function DataAutomationPage() {
       href: "/services/integration",
     }
   ]
+
+  const pageFaqs = [
+    {
+      question: "What's the difference between data automation and simple scripting?",
+      answer: "While scripting handles single, repetitive tasks, data automation orchestrates complex, end-to-end workflows. It includes robust error handling, dependency management, real-time monitoring, and scalability, creating a resilient system rather than just a simple script."
+    },
+    {
+      question: "How do you handle failures in an automated pipeline?",
+      answer: "Our automated pipelines are built with resilience in mind. We implement comprehensive logging, automated alerts for failures, and retry mechanisms. For critical processes, we design 'dead-letter queues' to isolate problematic data for manual review without halting the entire pipeline."
+    },
+    {
+      question: "Can you automate data collection from third-party APIs or websites?",
+      answer: "Yes. We specialize in building robust data connectors to pull information from various external sources, including third-party APIs (for services like Salesforce, Google Analytics, etc.) and web scraping for public data, ensuring it's structured and integrated into your data ecosystem."
+    },
+    {
+      question: "How does data automation improve data quality?",
+      answer: "Automation improves quality by eliminating manual entry errors. We embed data validation, cleaning, and transformation rules directly into the pipeline, ensuring that data is standardized and consistent before it reaches your analytics platforms or databases."
+    }
+  ];
 
   const features = [
     {
@@ -90,7 +114,7 @@ export default function DataAutomationPage() {
   const technologies = [
     { name: "Apache Airflow", category: "Orchestration" },
     { name: "Python", category: "Automation" },
-    { name: "AWS Lambda", category: "Serverless" },
+    { name: "Cloud", category: "Serverless" },
     { name: "Docker", category: "Containerization" },
     { name: "Kubernetes", category: "Orchestration" },
     { name: "Jenkins", category: "CI/CD" }
@@ -140,6 +164,8 @@ export default function DataAutomationPage() {
                 )}
               </div>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</Link>
+              <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+
               <Link href="/#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/#contact">
@@ -163,7 +189,7 @@ export default function DataAutomationPage() {
               className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+              Back to Home
             </Link>
             
             <div className="flex items-center space-x-4 mb-6">
@@ -389,6 +415,43 @@ export default function DataAutomationPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
+              Your Questions, Answered
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Key information about our Data Automation services.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="w-full">
+              {pageFaqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-gray-50 border-0 border-b shadow-sm rounded-lg mb-4 px-6">
+                  <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -420,8 +483,44 @@ export default function DataAutomationPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+                </div>
+                <span className="font-heading text-xl">Perspico Data</span>
+              </div>
+              <p className="text-gray-400">Transforming data into strategic advantage.</p>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                {servicesList.map(service => (
+                  <li key={service.href}><a href={service.href} className="hover:text-white transition-colors">{service.title.split('&')[0]}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
+                <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+                <li><a href="/#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">UK Office</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><MapPin className="inline w-4 h-4 mr-2" />London, UK</li>
+                <li><a href="mailto:info@perspicodata.com" className="hover:text-white transition-colors"><Mail className="inline w-4 h-4 mr-2" />info@perspicodata.com</a></li>
+                <li><a href="tel:+447825247759" className="hover:text-white transition-colors"><Phone className="inline w-4 h-4 mr-2" />+44 7825247759</a></li>
+              </ul>
+            </div>
+          </div>
+          <Separator className="my-8 bg-gray-800" />
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 Perspico Data. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Perspico Data. All rights reserved.</p>
           </div>
         </div>
       </footer>

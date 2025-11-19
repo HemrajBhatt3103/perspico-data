@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { 
   ArrowLeft, 
@@ -21,9 +22,13 @@ import {
   TrendingUp,
   Globe,
   Cpu,
-  BarChart3
+  BarChart3,
+  Phone,
+  Mail,
+  MapPin
 } from 'lucide-react'
 import Link from 'next/link'
+import { Separator } from '@/components/ui/separator'
 
 export default function IntegrationPage() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -53,6 +58,25 @@ export default function IntegrationPage() {
       href: "/services/integration",
     }
   ]
+
+  const pageFaqs = [
+    {
+      question: "What types of systems can you integrate?",
+      answer: "We can integrate a vast range of systems, including CRM (e.g., Salesforce), ERP (e.g., SAP), marketing automation platforms, financial software, custom databases, and third-party SaaS applications. Our goal is to create a unified data ecosystem, regardless of the source."
+    },
+    {
+      question: "Do you build custom APIs or use existing ones?",
+      answer: "Both. We are proficient at leveraging existing APIs for standard integrations. When a pre-built solution doesn't exist or is insufficient, we design and develop custom, secure, and scalable APIs to meet your specific data-sharing needs."
+    },
+    {
+      question: "How do you ensure data consistency between integrated systems?",
+      answer: "We establish a 'single source of truth' and implement robust data synchronization logic. This includes data mapping, transformation rules, and validation checks to ensure that data remains consistent and accurate across all connected systems."
+    },
+    {
+      question: "How do you handle real-time vs. batch integrations?",
+      answer: "We tailor the approach to your needs. For use cases requiring immediate data, we implement real-time integrations using webhooks or streaming platforms. For less time-sensitive data, we design efficient batch processes that run on a schedule to minimize system load."
+    }
+  ];
 
   const features = [
     {
@@ -92,7 +116,7 @@ export default function IntegrationPage() {
     { name: "Apache Kafka", category: "Streaming" },
     { name: "MQTT", category: "IoT Protocol" },
     { name: "Webhooks", category: "Event-driven" },
-    { name: "PostgreSQL", category: "Database" }
+    { name: "SQL & NoSQL", category: "Database" }
   ]
 
   return (
@@ -139,6 +163,8 @@ export default function IntegrationPage() {
                 )}
               </div>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</Link>
+              <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+
               <Link href="/#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/#contact">
@@ -162,7 +188,7 @@ export default function IntegrationPage() {
               className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+              Back to Home
             </Link>
             
             <div className="flex items-center space-x-4 mb-6">
@@ -388,6 +414,43 @@ export default function IntegrationPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
+              Your Questions, Answered
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Key information about our Integration services.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="w-full">
+              {pageFaqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-gray-50 border-0 border-b shadow-sm rounded-lg mb-4 px-6">
+                  <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 text-base pb-6">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-indigo-600 to-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -419,8 +482,44 @@ export default function IntegrationPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+                </div>
+                <span className="font-heading text-xl">Perspico Data</span>
+              </div>
+              <p className="text-gray-400">Transforming data into strategic advantage.</p>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                {servicesList.map(service => (
+                  <li key={service.href}><a href={service.href} className="hover:text-white transition-colors">{service.title.split('&')[0]}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
+                <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+                <li><a href="/#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading mb-4">UK Office</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><MapPin className="inline w-4 h-4 mr-2" />London, UK</li>
+                <li><a href="mailto:info@perspicodata.com" className="hover:text-white transition-colors"><Mail className="inline w-4 h-4 mr-2" />info@perspicodata.com</a></li>
+                <li><a href="tel:+447825247759" className="hover:text-white transition-colors"><Phone className="inline w-4 h-4 mr-2" />+44 7825247759</a></li>
+              </ul>
+            </div>
+          </div>
+          <Separator className="my-8 bg-gray-800" />
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 Perspico Data. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Perspico Data. All rights reserved.</p>
           </div>
         </div>
       </footer>
