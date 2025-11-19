@@ -134,7 +134,7 @@ export default function Home() {
   const infrastructure = [
     { name: "React Frontend", icon: Cpu, description: "Modern, responsive UI" },
     { name: "FastAPI Backend", icon: Zap, description: "High-performance API layer" },
-    { name: "PostgreSQL Database", icon: Database, description: "Secure, scalable data storage" },
+    { name: "SQL & NoSQL Database", icon: Database, description: "Secure, scalable data storage" },
     { name: "Cloud Computing Infrastructure", icon: Cloud, description: "Enterprise cloud platform" },
     { name: "VPC Networking", icon: Shield, description: "Isolated, secure environment" },
     { name: "RDS Database", icon: Database, description: "Managed database service" },
@@ -986,7 +986,10 @@ export default function Home() {
               <h4 className="font-heading mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-                <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
+                <li><a href="/services/privacy-policy" target="_blank" className="hover:text-white transition-colors" rel="noopener noreferrer">Privacy Policy</a> </li>
+                <li><a href="/services/terms-of-service" target="_blank" className="hover:text-white transition-colors" rel="noopener noreferrer">Terms of Service</a> </li>
+
+                <li><a href="/services/case-studies" target="_blank" className="hover:text-white transition-colors" rel="noopener noreferrer">Case Studies</a> </li>
                 <li><a href="#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
                 <li><a href="#security" className="hover:text-white transition-colors">Security</a></li>
               </ul>

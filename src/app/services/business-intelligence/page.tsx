@@ -508,7 +508,8 @@ export default function BusinessIntelligencePage() {
               <h4 className="font-heading mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
-                <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+                <li><a href="/services/privacy-policy" target="_blank" className="hover:text-white transition-colors" rel="noopener noreferrer">Privacy Policy</a> </li>
+                <li><a href="/services/case-studies" target="_blank" className="hover:text-white transition-colors" rel="noopener noreferrer">Case Studies</a> </li>
                 <li><a href="/#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
               </ul>
             </div>
