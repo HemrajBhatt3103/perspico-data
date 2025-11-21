@@ -973,10 +973,10 @@ export default function Home() {
             <div>
               <h4 className="font-heading mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/services/business-intelligence" className="hover:text-white transition-colors">Business Intelligence</a></li>
-                <li><a href="/services/supply-chain" className="hover:text-white transition-colors">Supply Chain Analytics</a></li>
-                <li><a href="/services/sustainability" className="hover:text-white transition-colors">Sustainability Analytics</a></li>
-                <li><a href="/services/product-analytics" className="hover:text-white transition-colors">Product Analytics</a></li>
+                <li><a href="/services/business-intelligence" className="hover:text-white transition-colors">Business Intelligence & Dashboards</a></li>
+                <li><a href="/services/supply-chain" className="hover:text-white transition-colors">Supply Chain & Operations Analytics</a></li>
+                <li><a href="/services/sustainability" className="hover:text-white transition-colors">Sustainability & Carbon Footprint Analytics</a></li>
+                <li><a href="/services/product-analytics" className="hover:text-white transition-colors">Product & Technology Analytics</a></li>
                 <li><a href="/services/data-automation" className="hover:text-white transition-colors">Data Automation</a></li>
                 <li><a href="/services/integration" className="hover:text-white transition-colors">Integration</a></li>
 
