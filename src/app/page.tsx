@@ -241,7 +241,9 @@ export default function Home() {
             <div className="px-4 py-2 space-y-1">
               <a href="#services" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
               <a href="#about" className="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
-              <Link href="/case-studies" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Results</Link>
+              <a href="/services/privacy-policy" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Privacy Policy</a> 
+              <a href="/services/terms-of-service" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Terms of Service</a> 
+              <a href="/services/case-studies" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Case Studies</a> 
               <a href="#infrastructure" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Infrastructure</a>
               <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
             </div>
@@ -988,7 +990,6 @@ export default function Home() {
                 <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="/services/privacy-policy" target="_blank" className="hover:text-white transition-colors" rel="noopener noreferrer">Privacy Policy</a> </li>
                 <li><a href="/services/terms-of-service" target="_blank" className="hover:text-white transition-colors" rel="noopener noreferrer">Terms of Service</a> </li>
-
                 <li><a href="/services/case-studies" target="_blank" className="hover:text-white transition-colors" rel="noopener noreferrer">Case Studies</a> </li>
                 <li><a href="#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
                 <li><a href="#security" className="hover:text-white transition-colors">Security</a></li>

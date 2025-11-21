@@ -272,7 +272,7 @@ export default function TermsOfServicePage() {
                 <Scale className="w-10 h-10 text-blue-600" />
               </div>
               <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
-                Last Updated: December 2024
+                Last Updated: November 2025
               </Badge>
               <h1 className="font-heading text-4xl md:text-5xl text-gray-900 mb-4">
                 Terms of Service
