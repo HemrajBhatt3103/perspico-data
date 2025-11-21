@@ -331,7 +331,7 @@ export default function Home() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/images/hero-dashboard.png" 
+                  src="/images/hero-dashboard-compressed.jpg" 
                   alt="Data Analytics Dashboard"
                   className="w-full h-auto object-cover"
                 />
