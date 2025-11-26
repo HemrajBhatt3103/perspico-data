@@ -175,15 +175,15 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                 <img
                     src="/perspico_data_logo.png"
                     alt="Perspico Data Logo"
                     className="w-full h-full object-contain"
                   />
               </div>
-              <span className="font-heading text-xl">Perspico Data</span>
+              <span className="font-heading text-2xl">Perspico Data</span>
             </div>
             
             <nav className="hidden md:flex items-center space-x-8">
@@ -954,20 +954,15 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8  rounded-lg flex items-center justify-center">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                   <img
                     src="/perspico_data_logo.png"
                     alt="Perspico Data Logo"
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="font-heading text-xl">Perspico Data</span>
-              </div>
-              <p className="text-gray-400">
-                Transforming data into strategic advantage for enterprise organizations.
-              </p>
+              <span className="font-heading text-2xl">Perspico Data</span>
             </div>
 
             <div>
