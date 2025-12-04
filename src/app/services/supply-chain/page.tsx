@@ -363,9 +363,7 @@ export default function SupplyChainPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    "The supply chain analysis platform transformed our operations. We reduced 
-                    inventory costs by 28% while improving delivery times by 40%. The predictive 
-                    insights have been game-changing for our business."
+                    "Working with Perspico Data transformed our operations. We went from scattered information to clear dashboards, automated processes, and faster decision-making. In just a few weeks, they integrated 8+ data sources, cleaned over 15,000 operational records, and gave us real visibility into the business."
                   </p>
                   <div className="flex items-center space-x-4">
                     <img
@@ -373,8 +371,8 @@ export default function SupplyChainPage() {
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
-                      <div className="font-heading">VP of Supply Chain</div>
-                      <div className="text-sm text-gray-600">Global Manufacturing Company</div>
+                      <div className="font-heading">Camilo Marroquin</div>
+                      <div className="text-sm text-gray-600">Experience, CEO & Co-Founder PitsDepot</div>
                     </div>
                   </div>
                 </CardContent>

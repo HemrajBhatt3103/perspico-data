@@ -371,8 +371,8 @@ export default function BusinessIntelligencePage() {
       </CardHeader>
       <CardContent>
         <p className="text-gray-600 mb-4">
-          "Implementing the BI dashboard solution transformed how we track performance metrics. 
-          We reduced reporting time by 60% and improved decision-making speed across all departments."
+          "A fast-growing fintech, I helped the team automate their entire reporting system. Before the project, they handled over 25 weekly reports manually, which caused errors and slowed decision-making.
+I built structured data pipelines, automated more than 80% of their Excel workflows, and developed 7 interactive Power BI dashboards for their finance, risk, and customer teams."
         </p>
         <div className="flex items-center space-x-4">
           {/* Chief Data Officer Profile Image */}
@@ -382,8 +382,8 @@ export default function BusinessIntelligencePage() {
             className="w-12 h-12 rounded-full object-cover"
           />
           <div>
-            <div className="font-heading">Chief Data Officer</div>
-            <div className="text-sm text-gray-600">Fortune 500 Retail Company</div>
+            <div className="font-heading">Javier Montoya</div>
+            <div className="text-sm text-gray-600">Co-founder - CTO at Avanzo</div>
           </div>
         </div>
       </CardContent>

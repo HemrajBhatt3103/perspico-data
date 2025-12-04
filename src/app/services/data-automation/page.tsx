@@ -364,9 +364,7 @@ export default function DataAutomationPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    "Implementing the data automation platform reduced our manual processing time by 70%. 
-                    The automated error handling and monitoring capabilities have eliminated data quality 
-                    issues and improved our operational efficiency significantly."
+                    "Perspico Data  helped us clean and unify more than 120,000 user records across 15 data sources. They automated 70% of our workflows and gave us a clear, brought structure and clarity to our user data at a critical stage of our startup. Their work helped us clean, organize, and connect key data sources, giving us the visibility we needed to understand user behavior and make better product decisions. I highly recommend their work"
                   </p>
                   <div className="flex items-center space-x-4">
                     <img
@@ -374,8 +372,8 @@ export default function DataAutomationPage() {
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
-                      <div className="font-heading">Data Engineering Manager</div>
-                      <div className="text-sm text-gray-600">Financial Services Company</div>
+                      <div className="font-heading">Memo Mogollan</div>
+                      <div className="text-sm text-gray-600">Co-founder CTO Panda Salud</div>
                     </div>
                   </div>
                 </CardContent>
