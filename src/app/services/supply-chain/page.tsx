@@ -354,7 +354,10 @@ export default function SupplyChainPage() {
               <Card className="border-0 shadow-xl">
                 <CardHeader>
                   <CardTitle className="font-heading flex items-center space-x-2">
-                    <Users className="w-6 h-6 text-green-600" />
+                    <img 
+                      src="/supply_chain_logo.jpeg" // Replace with your image path
+                      className="w-8 h-8"
+                    />
                     <span>Client Success Story</span>
                   </CardTitle>
                 </CardHeader>
@@ -365,7 +368,10 @@ export default function SupplyChainPage() {
                     insights have been game-changing for our business."
                   </p>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
+                    <img
+                      src="/supply_chain.jpeg" // Replace with your image path
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
                     <div>
                       <div className="font-heading">VP of Supply Chain</div>
                       <div className="text-sm text-gray-600">Global Manufacturing Company</div>

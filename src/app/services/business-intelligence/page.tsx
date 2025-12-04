@@ -358,26 +358,36 @@ export default function BusinessIntelligencePage() {
               viewport={{ once: true }}
             >
               <Card className="border-0 shadow-xl">
-                <CardHeader>
-                  <CardTitle className="font-heading flex items-center space-x-2">
-                    <Users className="w-6 h-6 text-blue-600" />
-                    <span>Client Success Story</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    "Implementing the BI dashboard solution transformed how we track performance metrics. 
-                    We reduced reporting time by 60% and improved decision-making speed across all departments."
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
-                    <div>
-                      <div className="font-heading">Chief Data Officer</div>
-                      <div className="text-sm text-gray-600">Fortune 500 Retail Company</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+  <CardHeader>
+    <CardTitle className="font-heading flex items-center space-x-2">
+      {/* Client Success Story Icon Image */}
+          <img 
+            src="/bid_logo.jpeg" // Replace with your image path
+            alt="Success Icon"
+            className="w-8 h-8"
+          />
+          <span>Client Success Story</span>
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-gray-600 mb-4">
+          "Implementing the BI dashboard solution transformed how we track performance metrics. 
+          We reduced reporting time by 60% and improved decision-making speed across all departments."
+        </p>
+        <div className="flex items-center space-x-4">
+          {/* Chief Data Officer Profile Image */}
+          <img
+            src="/bid.jpeg" // Replace with your image path
+            alt="Chief Data Officer"
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <div>
+            <div className="font-heading">Chief Data Officer</div>
+            <div className="text-sm text-gray-600">Fortune 500 Retail Company</div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
             </motion.div>
           </div>
         </div>

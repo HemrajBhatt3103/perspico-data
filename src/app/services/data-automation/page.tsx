@@ -355,7 +355,10 @@ export default function DataAutomationPage() {
               <Card className="border-0 shadow-xl">
                 <CardHeader>
                   <CardTitle className="font-heading flex items-center space-x-2">
-                    <Users className="w-6 h-6 text-orange-600" />
+                    <img 
+                      src="/data_automation_logo.jpeg" // Replace with your image path
+                      className="w-10 h-10"
+                    />
                     <span>Client Success Story</span>
                   </CardTitle>
                 </CardHeader>
@@ -366,7 +369,10 @@ export default function DataAutomationPage() {
                     issues and improved our operational efficiency significantly."
                   </p>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
+                    <img
+                      src="/data_automation.jpeg" // Replace with your image path
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
                     <div>
                       <div className="font-heading">Data Engineering Manager</div>
                       <div className="text-sm text-gray-600">Financial Services Company</div>
