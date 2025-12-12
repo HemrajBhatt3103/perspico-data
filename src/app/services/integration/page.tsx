@@ -263,13 +263,17 @@ export default function IntegrationPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/integration-systems.png" 
-                  alt="System Integration Architecture"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-600/20 to-transparent"></div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-3xl mx-auto bg-gray-50">
+                <div className="p-4">
+                  <div className="relative rounded-lg overflow-hidden bg-white">
+                    <img 
+                      src="/images/integration-systems.png" 
+                      alt="System Integration Architecture"
+                      className="w-full h-auto object-contain max-h-[500px]" /* Adjust max-height as needed */
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/60 to-transparent"></div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -410,6 +414,224 @@ export default function IntegrationPage() {
                 <div className="text-sm text-gray-600 mt-1">{tech.category}</div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Process */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl text-gray-900 mb-6">
+              Multi-Tenant Integration Architecture
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Secure, scalable onboarding and access management for enterprise clients
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Card className="border-0 shadow-xl">
+                <CardHeader>
+                  <CardTitle className="font-heading text-2xl flex items-center space-x-2">
+                    <Users className="w-6 h-6 text-indigo-600" />
+                    <span>Client Onboarding Flow</span>
+                  </CardTitle>
+                  <CardDescription>
+                    Automated provisioning and secure access management
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="w-4 h-4 bg-indigo-600 rounded-full"></div>
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-lg text-gray-900 mb-1">Client Access & Dedicated Space</h3>
+                        <p className="text-gray-600">
+                          The client can access their dedicated space within the platform.
+                        </p>
+                      </div>
+                    </div>
+
+                    <Separator />
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <Globe className="w-4 h-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-lg text-gray-900 mb-1">Domain Configuration</h3>
+                        <p className="text-gray-600 mb-2">
+                          Domains and subdomains are configured in Vercel and Route 53.
+                        </p>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                            Vercel
+                          </Badge>
+                          <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                            Route 53
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Separator />
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <Users className="w-4 h-4 text-green-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-lg text-gray-900 mb-1">User Management</h3>
+                        <p className="text-gray-600">
+                          Users are created in Cognito and linked to the tenantid.
+                        </p>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                            AWS Cognito
+                          </Badge>
+                          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                            Tenant ID
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Separator />
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <Cpu className="w-4 h-4 text-purple-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-lg text-gray-900 mb-1">Initial Configuration</h3>
+                        <p className="text-gray-600">
+                          The Lambda onboarding function provisions configurations and default structure in S3/Mongo.
+                        </p>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
+                            AWS Lambda
+                          </Badge>
+                          <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
+                            S3
+                          </Badge>
+                          <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
+                            MongoDB
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Separator />
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <Database className="w-4 h-4 text-orange-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-lg text-gray-900 mb-1">Tenant Registration</h3>
+                        <p className="text-gray-600">
+                          Tenant Administration service creates a new record in Postgres.
+                        </p>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-200">
+                            PostgreSQL
+                          </Badge>
+                          <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-200">
+                            Tenant Service
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="font-heading text-2xl text-gray-900">Complete Integration Workflow</h3>
+              <p className="text-gray-600">
+                Our multi-tenant architecture provides each client with an isolated, secure environment 
+                while maintaining centralized management and scalability.
+              </p>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h4 className="font-heading text-lg text-gray-900 mb-4 flex items-center">
+                  <Target className="w-5 h-5 mr-2 text-indigo-600" />
+                  Key Integration Points
+                </h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Automated client onboarding with zero manual intervention</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Secure identity management with AWS Cognito integration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Serverless provisioning using AWS Lambda functions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Hybrid database architecture (SQL + NoSQL) for optimal performance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Custom domain support with automated DNS configuration</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-indigo-50 rounded-xl p-6">
+                <h4 className="font-heading text-lg text-gray-900 mb-4 flex items-center">
+                  <TrendingUp className="w-5 h-5 mr-2 text-indigo-600" />
+                  Business Impact
+                </h4>
+                <p className="text-gray-700 mb-3">
+                  This integrated architecture enables:
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <Zap className="w-4 h-4 text-indigo-500 mr-2" />
+                    <span>Scalable multi-tenant deployments</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Shield className="w-4 h-4 text-indigo-500 mr-2" />
+                    <span>Enterprise-grade security and isolation</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Activity className="w-4 h-4 text-indigo-500 mr-2" />
+                    <span>Real-time provisioning and updates</span>
+                  </li>
+                  <li className="flex items-center">
+                    <BarChart3 className="w-4 h-4 text-indigo-500 mr-2" />
+                    <span>Centralized administration with tenant-level control</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

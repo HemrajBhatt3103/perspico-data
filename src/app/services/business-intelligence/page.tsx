@@ -358,36 +358,36 @@ export default function BusinessIntelligencePage() {
               viewport={{ once: true }}
             >
               <Card className="border-0 shadow-xl">
-  <CardHeader>
-    <CardTitle className="font-heading flex items-center space-x-2">
-      {/* Client Success Story Icon Image */}
-          <img 
-            src="/bid_logo.jpeg" // Replace with your image path
-            alt="Success Icon"
-            className="w-8 h-8"
-          />
-          <span>Client Success Story</span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-gray-600 mb-4">
-          "A fast-growing fintech, I helped the team automate their entire reporting system. Before the project, they handled over 25 weekly reports manually, which caused errors and slowed decision-making.
-I built structured data pipelines, automated more than 80% of their Excel workflows, and developed 7 interactive Power BI dashboards for their finance, risk, and customer teams."
-        </p>
-        <div className="flex items-center space-x-4">
-          {/* Chief Data Officer Profile Image */}
-          <img
-            src="/bid.jpeg" // Replace with your image path
-            alt="Chief Data Officer"
-            className="w-12 h-12 rounded-full object-cover"
-          />
-          <div>
-            <div className="font-heading">Javier Montoya</div>
-            <div className="text-sm text-gray-600">Co-founder - CTO at Avanzo</div>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+            <CardHeader>
+              <CardTitle className="font-heading flex items-center space-x-2">
+                {/* Client Success Story Icon Image */}
+                    <img 
+                      src="/bid_logo.jpeg" // Replace with your image path
+                      alt="Success Icon"
+                      className="w-8 h-8"
+                    />
+                    <span>Client Success Story</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-4">
+                    "A fast-growing fintech, I helped the team automate their entire reporting system. Before the project, they handled over 25 weekly reports manually, which caused errors and slowed decision-making.
+          I built structured data pipelines, automated more than 80% of their Excel workflows, and developed 7 interactive Power BI dashboards for their finance, risk, and customer teams."
+                  </p>
+                  <div className="flex items-center space-x-4">
+                    {/* Chief Data Officer Profile Image */}
+                    <img
+                      src="/bid.jpeg" // Replace with your image path
+                      alt="Chief Data Officer"
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <div className="font-heading">Javier Montoya</div>
+                      <div className="text-sm text-gray-600">Co-founder - CTO at Avanzo</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
         </div>
