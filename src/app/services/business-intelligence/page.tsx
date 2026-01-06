@@ -7,8 +7,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import { 
-  BarChart3, 
+import {
+  BarChart3,
   PieChart,
   LineChart,
   CheckCircle,
@@ -130,16 +130,16 @@ export default function BusinessIntelligencePage() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                 <img
-                    src="/perspico_data_logo.png"
-                    alt="Perspico Data Logo"
-                    className="w-full h-full object-contain"
-                  />
+                  src="/perspico_data_logo.png"
+                  alt="Perspico Data Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-8">
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -149,7 +149,7 @@ export default function BusinessIntelligencePage() {
                   <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isServicesOpen && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg"
@@ -165,12 +165,12 @@ export default function BusinessIntelligencePage() {
                 )}
               </div>
               <a href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-                <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
+              <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
               <a href="/#infrastructure" className="text-gray-700 hover:text-blue-600 transition-colors">Infrastructure</a>
               <a href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
               <Button asChild className="bg-blue-600 hover:bg-blue-700"><a href="/#contact">Book Consultation</a></Button>
             </nav>
-            <button className="md:hidden" onClick={() => {}}>
+            <button className="md:hidden" onClick={() => { }}>
               <Menu className="w-6 h-6" />
             </button>
           </div>
@@ -188,7 +188,7 @@ export default function BusinessIntelligencePage() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <Link 
+            <Link
               href="/"
               className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"
             >
@@ -197,7 +197,7 @@ export default function BusinessIntelligencePage() {
               </div>
               Back to Home
             </Link>
-            
+
             <div className="flex items-center space-x-4 mb-6">
               <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center">
                 <BarChart3 className="w-8 h-8 text-white" />
@@ -209,9 +209,9 @@ export default function BusinessIntelligencePage() {
                 </h1>
               </div>
             </div>
-            
+
             <p className="text-xl text-gray-600 max-w-3xl">
-              Transform raw data into actionable insights with interactive dashboards, 
+              Transform raw data into actionable insights with interactive dashboards,
               real-time analytics, and comprehensive reporting solutions.
             </p>
           </motion.div>
@@ -232,16 +232,16 @@ export default function BusinessIntelligencePage() {
                 Data-Driven Decision Making
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our Business Intelligence solutions empower organizations to make informed decisions 
-                through real-time data visualization, predictive analytics, and automated reporting. 
-                We transform complex datasets into intuitive dashboards that provide immediate insights 
+                Our Business Intelligence solutions empower organizations to make informed decisions
+                through real-time data visualization, predictive analytics, and automated reporting.
+                We transform complex datasets into intuitive dashboards that provide immediate insights
                 into business performance.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From executive-level overviews to operational details, our BI platforms scale with your 
+                From executive-level overviews to operational details, our BI platforms scale with your
                 organization's needs, ensuring the right information reaches the right people at the right time.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600" />
@@ -270,8 +270,8 @@ export default function BusinessIntelligencePage() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/bi-dashboard.png" 
+                <img
+                  src="/images/bi-dashboard.png"
                   alt="Business Intelligence Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -357,33 +357,60 @@ export default function BusinessIntelligencePage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="border-0 shadow-xl">
-            <CardHeader>
-              <CardTitle className="font-heading flex items-center space-x-2">
-                {/* Client Success Story Icon Image */}
-                    <img 
-                      src="/bid_logo.jpeg" // Replace with your image path
-                      alt="Success Icon"
-                      className="w-8 h-8"
-                    />
-                    <span>Client Success Story</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    "A fast-growing fintech, I helped the team automate their entire reporting system. Before the project, they handled over 25 weekly reports manually, which caused errors and slowed decision-making.
-          I built structured data pipelines, automated more than 80% of their Excel workflows, and developed 7 interactive Power BI dashboards for their finance, risk, and customer teams."
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    {/* Chief Data Officer Profile Image */}
-                    <img
-                      src="/bid.jpeg" // Replace with your image path
-                      alt="Chief Data Officer"
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
+              <Card className="border-0 shadow-xl overflow-hidden max-w-2xl mx-auto">
+                {/* Background accent */}
+                <div className="h-2 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                <CardContent className="p-8">
+                  {/* Quote symbol */}
+                  <div className="mb-3">
+                    <div className="text-6xl text-blue-100 font-serif leading-none">“</div>
+                  </div>
+
+                  {/* Testimonial text */}
+                  <blockquote className="mb-8">
+                    <p className="text-gray-700 text-lg italic leading-relaxed">
+                      "Implementing the analytics platform reduced our credit evaluation time by up to 55% while significantly improving the accuracy and consistency of our risk models. With real-time visibility across loan origination, delinquency, and recovery KPIs, we were able to scale across multiple client companies without increasing operating costs, while strengthening risk management through early default detection."
+                    </p>
+                  </blockquote>
+
+                  {/* Client info */}
+                  <div className="flex items-center space-x-4 pt-6 border-t border-gray-100">
+                    <div className="relative">
+                      <img
+                        src="/bid.jpeg"
+                        alt="Javier Montoya"
+                        className="w-14 h-14 rounded-full object-cover ring-3 ring-blue-50"
+                      />
+                      {/* Company logo badge */}
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-white rounded-full p-1 shadow-sm">
+                        <img
+                          src="/bid_logo.jpeg"
+                          alt="Avanzo"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
+
                     <div>
-                      <div className="font-heading">Javier Montoya</div>
-                      <div className="text-sm text-gray-600">Co-founder - CTO at Avanzo</div>
+                      <div className="font-semibold text-gray-900">Javier Montoya</div>
+                      <div className="text-gray-600 text-sm">Co-founder & CTO at Avanzo</div>
+                      {/* Success metric badge */}
+                      <div className="inline-flex items-center mt-1 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium">
+                        <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        55% Faster Credit Evaluation
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Success story label */}
+                  <div className="absolute top-6 right-6">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium">
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
+                      </svg>
+                      Success Story
                     </div>
                   </div>
                 </CardContent>
@@ -499,8 +526,8 @@ export default function BusinessIntelligencePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
-                </div>
+                <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+              </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </div>
             <div>

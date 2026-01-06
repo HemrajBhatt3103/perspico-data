@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
-import { 
-  ArrowLeft, 
-  BarChart3, 
-  Globe, 
+import {
+  ArrowLeft,
+  BarChart3,
+  Globe,
   Leaf,
   TreePine,
   Target,
@@ -123,16 +123,16 @@ export default function SustainabilityPage() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                 <img
-                    src="/perspico_data_logo.png"
-                    alt="Perspico Data Logo"
-                    className="w-full h-full object-contain"
-                  />
+                  src="/perspico_data_logo.png"
+                  alt="Perspico Data Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-8">
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -142,7 +142,7 @@ export default function SustainabilityPage() {
                   <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isServicesOpen && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg"
@@ -162,7 +162,7 @@ export default function SustainabilityPage() {
               <Link href="/case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Case Studies</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/#contact">
-              <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>
+                <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>
               </Link>
             </nav>
           </div>
@@ -177,14 +177,14 @@ export default function SustainabilityPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link 
+            <Link
               href="/"
               className="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Link>
-            
+
             <div className="flex items-center space-x-4 mb-6">
               <div className="w-16 h-16 bg-emerald-600 rounded-xl flex items-center justify-center">
                 <Globe className="w-8 h-8 text-white" />
@@ -196,9 +196,9 @@ export default function SustainabilityPage() {
                 </h1>
               </div>
             </div>
-            
+
             <p className="text-xl text-gray-600 max-w-3xl">
-              Track, measure, and optimize your environmental impact with comprehensive 
+              Track, measure, and optimize your environmental impact with comprehensive
               ESG analytics and carbon footprint management solutions.
             </p>
           </motion.div>
@@ -219,16 +219,16 @@ export default function SustainabilityPage() {
                 Environmental Intelligence Platform
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our Sustainability Analytics platform provides comprehensive tracking of Environmental, 
-                Social, and Governance (ESG) metrics, enabling organizations to measure their environmental 
+                Our Sustainability Analytics platform provides comprehensive tracking of Environmental,
+                Social, and Governance (ESG) metrics, enabling organizations to measure their environmental
                 impact accurately and make data-driven decisions for improvement.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From carbon footprint analysis to sustainability reporting, we help organizations 
-                meet regulatory requirements, enhance brand reputation, and contribute to global 
+                From carbon footprint analysis to sustainability reporting, we help organizations
+                meet regulatory requirements, enhance brand reputation, and contribute to global
                 sustainability goals while maintaining operational excellence.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-emerald-600" />
@@ -257,8 +257,8 @@ export default function SustainabilityPage() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/sustainability-analytics.png" 
+                <img
+                  src="/images/sustainability-analytics.png"
                   alt="Sustainability Analytics Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -354,8 +354,8 @@ export default function SustainabilityPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    "The sustainability analytics platform helped us reduce our carbon footprint by 25% 
-                    while ensuring 100% regulatory compliance. The real-time monitoring capabilities 
+                    "The sustainability analytics platform helped us reduce our carbon footprint by 25%
+                    while ensuring 100% regulatory compliance. The real-time monitoring capabilities
                     have transformed our environmental management approach."
                   </p>
                   <div className="flex items-center space-x-4">
@@ -462,12 +462,12 @@ export default function SustainabilityPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/#contact">
-              <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4">
-                Schedule a Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+                <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4">
+                  Schedule a Demo
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
               </Link>
-              
+
             </div>
           </motion.div>
         </div>
@@ -479,8 +479,8 @@ export default function SustainabilityPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
-                </div>
+                <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+              </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </div>
             <div>

@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
-import { 
-  ArrowLeft, 
-  Cpu, 
+import {
+  ArrowLeft,
+  Cpu,
   Monitor,
   Smartphone,
   Target,
@@ -128,16 +128,16 @@ export default function ProductAnalyticsPage() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                 <img
-                    src="/perspico_data_logo.png"
-                    alt="Perspico Data Logo"
-                    className="w-full h-full object-contain"
-                  />
+                  src="/perspico_data_logo.png"
+                  alt="Perspico Data Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-8">
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -147,7 +147,7 @@ export default function ProductAnalyticsPage() {
                   <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isServicesOpen && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg"
@@ -168,7 +168,7 @@ export default function ProductAnalyticsPage() {
               <Link href="/#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/#contact">
-              <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>
+                <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>
               </Link>
             </nav>
           </div>
@@ -183,14 +183,14 @@ export default function ProductAnalyticsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link 
+            <Link
               href="/"
               className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Link>
-            
+
             <div className="flex items-center space-x-4 mb-6">
               <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center">
                 <Cpu className="w-8 h-8 text-white" />
@@ -202,9 +202,9 @@ export default function ProductAnalyticsPage() {
                 </h1>
               </div>
             </div>
-            
+
             <p className="text-xl text-gray-600 max-w-3xl">
-              Drive product success with comprehensive analytics covering ROI metrics, 
+              Drive product success with comprehensive analytics covering ROI metrics,
               adoption patterns, and performance tracking insights.
             </p>
           </motion.div>
@@ -225,16 +225,16 @@ export default function ProductAnalyticsPage() {
                 Product Intelligence Platform
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our Product Analytics solutions provide deep insights into how users interact with 
-                your products, enabling data-driven decisions that enhance user experience, 
+                Our Product Analytics solutions provide deep insights into how users interact with
+                your products, enabling data-driven decisions that enhance user experience,
                 optimize features, and maximize return on investment.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From user journey mapping to feature adoption analysis, we help product teams 
-                understand what drives success, identify opportunities for improvement, and 
+                From user journey mapping to feature adoption analysis, we help product teams
+                understand what drives success, identify opportunities for improvement, and
                 build products that truly meet customer needs.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-purple-600" />
@@ -263,8 +263,8 @@ export default function ProductAnalyticsPage() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/product-analytics.png" 
+                <img
+                  src="/images/product-analytics.png"
                   alt="Product Analytics Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -359,8 +359,8 @@ export default function ProductAnalyticsPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    "The product analytics platform transformed how we make development decisions. 
-                    We improved our ROI by 45% and doubled user adoption rates for new features. 
+                    "The product analytics platform transformed how we make development decisions.
+                    We improved our ROI by 45% and doubled user adoption rates for new features.
                     The insights have been invaluable for our product roadmap."
                   </p>
                   <div className="flex items-center space-x-4">
@@ -467,12 +467,12 @@ export default function ProductAnalyticsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/#contact">
-              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4">
-                Schedule a Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4">
+                  Schedule a Demo
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
               </Link>
-              
+
             </div>
           </motion.div>
         </div>
@@ -484,8 +484,8 @@ export default function ProductAnalyticsPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
-                </div>
+                <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+              </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </div>
             <div>
