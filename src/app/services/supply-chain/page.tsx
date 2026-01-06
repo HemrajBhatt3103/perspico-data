@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
-import { 
-  ArrowLeft, 
-  TrendingUp, 
+import {
+  ArrowLeft,
+  TrendingUp,
   Truck,
   Package,
   Target,
@@ -128,16 +128,16 @@ export default function SupplyChainPage() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                 <img
-                    src="/perspico_data_logo.png"
-                    alt="Perspico Data Logo"
-                    className="w-full h-full object-contain"
-                  />
+                  src="/perspico_data_logo.png"
+                  alt="Perspico Data Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-8">
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -147,7 +147,7 @@ export default function SupplyChainPage() {
                   <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isServicesOpen && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute top-full left-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg"
@@ -168,7 +168,7 @@ export default function SupplyChainPage() {
               <Link href="/#case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Results</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/#contact">
-              <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>
+                <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>
               </Link>
             </nav>
           </div>
@@ -183,14 +183,14 @@ export default function SupplyChainPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link 
+            <Link
               href="/"
               className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Link>
-            
+
             <div className="flex items-center space-x-4 mb-6">
               <div className="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center">
                 <TrendingUp className="w-8 h-8 text-white" />
@@ -202,9 +202,9 @@ export default function SupplyChainPage() {
                 </h1>
               </div>
             </div>
-            
+
             <p className="text-xl text-gray-600 max-w-3xl">
-              Optimize your supply chain with predictive modeling, real-time insights, 
+              Optimize your supply chain with predictive modeling, real-time insights,
               and advanced Analysis for enhanced operational efficiency.
             </p>
           </motion.div>
@@ -225,17 +225,17 @@ export default function SupplyChainPage() {
                 Intelligent Supply Chain Optimization
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our Supply Chain Analysis solutions leverage advanced machine learning algorithms 
-                and predictive modeling to transform your operations. We provide end-to-end visibility 
-                from raw materials to final delivery, enabling data-driven decisions that reduce costs 
+                Our Supply Chain Analysis solutions leverage advanced machine learning algorithms
+                and predictive modeling to transform your operations. We provide end-to-end visibility
+                from raw materials to final delivery, enabling data-driven decisions that reduce costs
                 and improve efficiency.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From demand forecasting to route optimization, our analysis platform helps you 
-                anticipate challenges, identify opportunities, and maintain competitive advantage 
+                From demand forecasting to route optimization, our analysis platform helps you
+                anticipate challenges, identify opportunities, and maintain competitive advantage
                 in today's complex supply chain landscape.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600" />
@@ -264,8 +264,8 @@ export default function SupplyChainPage() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/supply-chain.png" 
+                <img
+                  src="/images/supply-chain.png"
                   alt="Supply Chain Analytics Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -354,7 +354,7 @@ export default function SupplyChainPage() {
               <Card className="border-0 shadow-xl">
                 <CardHeader>
                   <CardTitle className="font-heading flex items-center space-x-2">
-                    <img 
+                    <img
                       src="/supply_chain_logo.jpeg" // Replace with your image path
                       className="w-8 h-8"
                     />
@@ -372,7 +372,7 @@ export default function SupplyChainPage() {
                     />
                     <div>
                       <div className="font-heading">Camilo Marroquin</div>
-                      <div className="text-sm text-gray-600">Experience, CEO & Co-Founder PitsDepot</div>
+                      <div className="text-sm text-gray-600">CEO & Co-Founder PitsDepot</div>
                     </div>
                   </div>
                 </CardContent>
@@ -472,12 +472,12 @@ export default function SupplyChainPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/#contact">
-              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4">
-                Schedule a Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+                <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4">
+                  Schedule a Demo
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
               </Link>
-              
+
             </div>
           </motion.div>
         </div>
@@ -489,8 +489,8 @@ export default function SupplyChainPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                  <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
-                </div>
+                <img src="/perspico_data_logo.png" alt="Perspico Data Logo" className="w-full h-full object-contain" />
+              </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </div>
             <div>
