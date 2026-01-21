@@ -159,7 +159,6 @@ export default function SustainabilityPage() {
               </div>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</Link>
               <a href="/services/case-studies" target="_blank" rel="noopener noreferrer">Case Studies</a>
-              <Link href="/case-studies" className="text-gray-700 hover:text-blue-600 transition-colors">Case Studies</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/#contact">
                 <Button className="bg-blue-600 hover:bg-blue-700">Book Consultation</Button>

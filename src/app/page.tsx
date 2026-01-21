@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, ChangeEvent, FormEvent } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -8,12 +8,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import { 
-  BarChart3, 
-  TrendingUp, 
-  Shield, 
-  Database, 
-  Cloud, 
+import {
+  BarChart3,
+  TrendingUp,
+  Shield,
+  Database,
+  Cloud,
   Cpu,
   LineChart,
   PieChart,
@@ -42,7 +42,7 @@ export default function Home() {
     message: '',
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -50,7 +50,7 @@ export default function Home() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const subject = `${formData.company} — Consultation Request for Data Solutions`;
     const body = formData.message;
@@ -169,7 +169,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
       {/* Header */}
-      <motion.header 
+      <motion.header
         style={{ opacity: headerOpacity, backgroundColor: headerBackground }}
         className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-gray-200 shadow-sm"
       >
@@ -178,16 +178,16 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                 <img
-                    src="/perspico_data_logo.png"
-                    alt="Perspico Data Logo"
-                    className="w-full h-full object-contain"
-                  />
+                  src="/perspico_data_logo.png"
+                  alt="Perspico Data Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </div>
-            
+
             <nav className="hidden md:flex items-center space-x-8">
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -197,7 +197,7 @@ export default function Home() {
                   <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isServicesOpen && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     // The pt-2 on the parent div and removal of mt-2 here prevents a gap that closes the menu on hover
@@ -222,7 +222,7 @@ export default function Home() {
               <Button asChild className="bg-blue-600 hover:bg-blue-700"><a href="#contact">Book Consultation</a></Button>
             </nav>
 
-            <button 
+            <button
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -233,7 +233,7 @@ export default function Home() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden bg-white border-t border-gray-200"
@@ -241,9 +241,9 @@ export default function Home() {
             <div className="px-4 py-2 space-y-1">
               <a href="#services" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Services</a>
               <a href="#about" className="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
-              <a href="/services/privacy-policy" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Privacy Policy</a> 
-              <a href="/services/terms-of-service" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Terms of Service</a> 
-              <a href="/services/case-studies" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Case Studies</a> 
+              <a href="/services/privacy-policy" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Privacy Policy</a>
+              <a href="/services/terms-of-service" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Terms of Service</a>
+              <a href="/services/case-studies" target="_blank" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Case Studies</a>
               <a href="#infrastructure" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Infrastructure</a>
               <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
             </div>
@@ -310,15 +310,15 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#services">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
-                  Explore Services
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
+                    Explore Services
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
                 </Link>
                 <a href="#contact">
-                <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg">
-                  Book a Consultation
-                </Button>
+                  <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg">
+                    Book a Consultation
+                  </Button>
                 </a>
               </div>
             </motion.div>
@@ -330,8 +330,8 @@ export default function Home() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/hero-dashboard-compressed.jpg" 
+                <img
+                  src="/images/hero-dashboard-compressed.jpg"
                   alt="Data Analytics Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -356,7 +356,7 @@ export default function Home() {
               About Our Expertise
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              With deep experience across analytics strategy, implementation, and governance, 
+              With deep experience across analytics strategy, implementation, and governance,
               we help enterprises turn raw data into actionable intelligence.
             </p>
           </motion.div>
@@ -369,8 +369,8 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/about-team.png" 
+                <img
+                  src="/images/about-team.png"
                   alt="Professional Analytics Team"
                   className="w-full h-auto object-cover"
                 />
@@ -388,13 +388,13 @@ export default function Home() {
                 Decades of Collective Excellence
               </h3>
               <p className="text-lg text-gray-600 mb-6">
-                Our team brings together decades of combined experience in data analytics, 
-                strategic consulting, and enterprise transformation. We've helped hundreds of 
+                Our team brings together decades of combined experience in data analytics,
+                strategic consulting, and enterprise transformation. We've helped hundreds of
                 organizations across various industries unlock the full potential of their data assets.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From startups to Fortune 500 companies, our approach combines deep technical 
-                expertise with business acumen to deliver solutions that drive measurable results 
+                From startups to Fortune 500 companies, our approach combines deep technical
+                expertise with business acumen to deliver solutions that drive measurable results
                 and sustainable competitive advantage.
               </p>
               <div className="grid grid-cols-2 gap-6">
@@ -583,8 +583,8 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/infrastructure-datacenter.png" 
+                <img
+                  src="/images/infrastructure-datacenter.png"
                   alt="Enterprise Data Center Infrastructure"
                   className="w-full h-auto object-cover"
                 />
@@ -602,12 +602,12 @@ export default function Home() {
                 Modern Cloud Architecture
               </h3>
               <p className="text-lg text-gray-600 mb-6">
-                Our infrastructure leverages cutting-edge cloud technologies to deliver 
+                Our infrastructure leverages cutting-edge cloud technologies to deliver
                 scalable, secure, and high-performance analytics solutions. Built on cloud computing infrastructure
                 with automated CI/CD pipelines and comprehensive monitoring.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Every component is designed for enterprise-grade reliability, from 
+                Every component is designed for enterprise-grade reliability, from
                 load-balanced web servers to encrypted databases and real-time backup systems.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -673,7 +673,7 @@ export default function Home() {
         </div>
       </section>
 
-<section id="security" className="py-20 bg-gray-50">
+      <section id="security" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -698,8 +698,8 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/security-uk.png" 
+                <img
+                  src="/images/security-uk.png"
                   alt="UK Data Security Compliance"
                   className="w-full h-auto object-cover"
                 />
@@ -717,13 +717,13 @@ export default function Home() {
                 UK Data Protection Excellence
               </h3>
               <p className="text-lg text-gray-600 mb-6">
-                Our security framework is specifically designed to meet and exceed UK data protection 
-                requirements, ensuring full compliance with local regulations while maintaining global 
+                Our security framework is specifically designed to meet and exceed UK data protection
+                requirements, ensuring full compliance with local regulations while maintaining global
                 security standards.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                From GDPR to UK specific data protection laws, our comprehensive security 
-                protocols ensure your data remains protected, private, and compliant with all 
+                From GDPR to UK specific data protection laws, our comprehensive security
+                protocols ensure your data remains protected, private, and compliant with all
                 relevant legislation.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -839,14 +839,14 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8">
-                <img 
-                  src="/images/contact-consultation.png" 
+                <img
+                  src="/images/contact-consultation.png"
                   alt="Professional Data Analytics Consultation"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
               </div>
-              
+
               <h3 className="font-heading text-2xl text-gray-900 mb-6">Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
@@ -883,67 +883,67 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <form onSubmit={handleSubmit}>
-              <Card className="border-0 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="font-heading">Contact Us</CardTitle>
-                  <CardDescription>
-                    Fill out the form below and we'll get back to you within 24 hours
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                <Card className="border-0 shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="font-heading">Contact Us</CardTitle>
+                    <CardDescription>
+                      Fill out the form below and we'll get back to you within 24 hours
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium mb-2">Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="John Doe"
+                          required
+                        />                    </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="john@company.com"
+                          required
+                        />
+                      </div>
+                    </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Name</label>
-                                            <input
-                                              type="text"
-                                              name="name"
-                                              value={formData.name}
-                                              onChange={handleInputChange}
-                                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                              placeholder="John Doe"
-                                              required
-                                            />                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Email</label>
-                      <input 
-                        type="email" 
-                        name="email"
-                        value={formData.email}
+                      <label className="block text-sm font-medium mb-2">Company</label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={formData.company}
                         onChange={handleInputChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="john@company.com"
+                        placeholder="Acme Corporation"
                         required
                       />
                     </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Company</label>
-                    <input 
-                      type="text" 
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Acme Corporation"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Message</label>
-                    <textarea 
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
-                      placeholder="Tell us about your data analytics needs..."
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-                    Schedule Consultation
-                  </Button>
-                </CardContent>
-              </Card>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Message</label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
+                        placeholder="Tell us about your data analytics needs..."
+                        required
+                      />
+                    </div>
+                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
+                      Schedule Consultation
+                    </Button>
+                  </CardContent>
+                </Card>
               </form>
             </motion.div>
           </div>
@@ -956,12 +956,12 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                  <img
-                    src="/perspico_data_logo.png"
-                    alt="Perspico Data Logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+                <img
+                  src="/perspico_data_logo.png"
+                  alt="Perspico Data Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <span className="font-heading text-2xl">Perspico Data</span>
             </div>
 
@@ -975,7 +975,7 @@ export default function Home() {
                 <li><a href="/services/data-automation" className="hover:text-white transition-colors">Data Automation</a></li>
                 <li><a href="/services/integration" className="hover:text-white transition-colors">Integration</a></li>
 
-                
+
               </ul>
             </div>
 
